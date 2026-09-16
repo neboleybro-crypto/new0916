@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ТРОН — тканевые аксессуары для инвалидных колясок</title>
+<meta name="description" content="ТРОН: противопролежневые подушки, чехлы, сумки и защита рамы для инвалидных колясок. Пошив по индивидуальным размерам. Доставка по России и СНГ.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --void:#05070F;
+  --deep:#090D1A;
+  --panel:#0D1324;
+  --edge:rgba(64,224,255,0.22);
+  --edge-soft:rgba(140,160,200,0.14);
+  --cyan:#3DE1FF;
+  --cyan-dim:#1B8FA8;
+  --magenta:#FF4FD8;
+  --amber:#FFC24A;
+  --text:#E4ECF7;
+  --muted:#8FA2BF;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  background:var(--void);
+  color:var(--text);
+  font-family:"Inter",sans-serif;
+  font-size:16.5px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+/* perspective grid backdrop */
+body::before{
+  content:"";
+  position:fixed; inset:0; z-index:0; pointer-events:none;
+  background:
+    radial-gradient(900px 500px at 50% -5%, rgba(61,225,255,0.16), transparent 70%),
+    radial-gradient(700px 500px at 85% 100%, rgba(255,79,216,0.10), transparent 70%),
+    linear-gradient(transparent 0 39px, rgba(61,225,255,0.045) 39px 40px),
+    linear-gradient(90deg, transparent 0 39px, rgba(61,225,255,0.045) 39px 40px);
+  background-size:auto, auto, 40px 40px, 40px 40px;
+}
+main,header,footer{position:relative; z-index:1;}
+h1,h2,h3{font-family:"Chakra Petch",sans-serif; margin:0; line-height:1.12; letter-spacing:0.01em;}
+a{color:inherit;}
+svg{display:block;}
+.wrap{max-width:1140px; margin:0 auto; padding:0 32px;}
+section{padding:84px 0;}
+a:focus-visible,button:focus-visible{outline:2px solid var(--cyan); outline-offset:3px;}
+@media (prefers-reduced-motion: reduce){
+  *{animation:none !important; transition-duration:.001ms !important;}
+}
+
+/* ---------- header ---------- */
+header{
+  position:sticky; top:0; z-index:60;
+  background:rgba(5,7,15,0.82);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--edge);
+}
+.header-inner{
+  max-width:1140px; margin:0 auto; padding:16px 32px;
+  display:flex; align-items:center; justify-content:space-between; gap:24px;
+}
+.brand{display:flex; align-items:center; gap:12px; text-decoration:none;}
+.brand-mark{width:34px; height:34px; color:var(--cyan); filter:drop-shadow(0 0 7px rgba(61,225,255,0.6));}
+.brand-text{display:flex; flex-direction:column;}
+.brand-name{
+  font-family:"Chakra Petch",sans-serif; font-weight:700; font-size:23px;
+  letter-spacing:0.22em; color:#fff;
+  text-shadow:0 0 12px rgba(61,225,255,0.55);
+}
+.brand-tag{font-size:11.5px; color:var(--muted); letter-spacing:0.04em;}
+nav{display:flex; gap:26px;}
+nav a{text-decoration:none; font-size:14.5px; color:var(--muted); transition:color .15s, text-shadow .15s;}
+nav a:hover{color:var(--cyan); text-shadow:0 0 10px rgba(61,225,255,.5);}
+
+.btn{
+  display:inline-flex; align-items:center; gap:10px;
+  padding:12px 24px; font-family:"Chakra Petch",sans-serif; font-weight:600;
+  font-size:15px; letter-spacing:0.04em; text-decoration:none; cursor:pointer;
+  border:1px solid var(--cyan); color:var(--cyan); background:rgba(61,225,255,0.06);
+  clip-path:polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+  transition:background .18s, color .18s, box-shadow .18s;
+  box-shadow:0 0 0 rgba(61,225,255,0);
+}
+.btn:hover{background:var(--cyan); color:#05070F; box-shadow:0 0 22px rgba(61,225,255,.45);}
+.btn-magenta{border-color:var(--magenta); color:var(--magenta); background:rgba(255,79,216,0.06);}
+.btn-magenta:hover{background:var(--magenta); color:#05070F; box-shadow:0 0 22px rgba(255,79,216,.45);}
+.btn-quiet{border-color:var(--edge-soft); color:var(--text); background:transparent;}
+.btn-quiet:hover{border-color:var(--cyan); color:var(--cyan); background:transparent; box-shadow:none;}
+
+/* ---------- hero ---------- */
+.hero{padding:70px 0 70px;}
+.hero-inner{display:grid; grid-template-columns:1.02fr 0.98fr; gap:48px; align-items:center;}
+.hero h1{font-size:clamp(34px,5vw,58px); font-weight:700;}
+.hero h1 .glow{color:#fff; text-shadow:0 0 18px rgba(61,225,255,0.65), 0 0 46px rgba(61,225,255,0.3);}
+.hero p{margin-top:22px; color:var(--muted); font-size:17.5px; max-width:48ch;}
+.hero-ctas{display:flex; gap:14px; margin-top:32px; flex-wrap:wrap;}
+.hero-art{position:relative;}
+.hero-art svg{width:100%; height:auto; overflow:visible;}
+
+.trace{stroke-dasharray:1400; stroke-dashoffset:1400; animation:draw 2.1s ease forwards .15s;}
+.trace2{animation-delay:.5s;}
+@keyframes draw{to{stroke-dashoffset:0;}}
+.pulse{animation:pulse 2.6s ease-in-out infinite;}
+@keyframes pulse{0%,100%{opacity:.45;} 50%{opacity:1;}}
+
+/* ---------- strip ---------- */
+.strip{border-top:1px solid var(--edge); border-bottom:1px solid var(--edge); background:rgba(13,19,36,0.6); padding:30px 0;}
+.strip-inner{display:grid; grid-template-columns:repeat(3,1fr); gap:28px;}
+.strip-item{display:flex; gap:14px;}
+.strip-item svg{flex:none; width:30px; height:30px; color:var(--cyan);}
+.strip-item h3{font-size:15.5px; font-weight:600;}
+.strip-item p{margin:4px 0 0; font-size:14px; color:var(--muted);}
+
+/* ---------- section heads ---------- */
+.section-head{max-width:58ch; margin-bottom:46px;}
+.section-head h2{font-size:clamp(26px,3.3vw,38px); font-weight:700;}
+.section-head p{margin-top:14px; color:var(--muted);}
+
+/* ---------- categories ---------- */
+.cat-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px;}
+.cat{
+  position:relative; padding:28px 26px; background:linear-gradient(160deg, rgba(13,19,36,.92), rgba(9,13,26,.92));
+  border:1px solid var(--edge-soft);
+  clip-path:polygon(16px 0, 100% 0, 100% calc(100% - 16px), calc(100% - 16px) 100%, 0 100%, 0 16px);
+  transition:border-color .2s, box-shadow .2s, transform .2s;
+}
+.cat:hover{border-color:var(--cyan); box-shadow:0 0 28px rgba(61,225,255,.16) inset, 0 0 22px rgba(61,225,255,.12);}
+.cat svg.ico{width:40px; height:40px; color:var(--cyan); margin-bottom:16px;}
+.cat h3{font-size:18px; font-weight:600;}
+.cat p{margin:10px 0 0; font-size:14.5px; color:var(--muted);}
+.cat.accent svg.ico{color:var(--magenta);}
+.cat.accent:hover{border-color:var(--magenta); box-shadow:0 0 28px rgba(255,79,216,.14) inset;}
+
+/* ---------- pillow ---------- */
+.pillow{border-top:1px solid var(--edge);}
+.spot-grid{display:grid; grid-template-columns:1.05fr .95fr; gap:54px; align-items:start;}
+.diagram-frame{
+  border:1px solid var(--edge); padding:18px; background:rgba(9,13,26,.7);
+  clip-path:polygon(18px 0, 100% 0, 100% calc(100% - 18px), calc(100% - 18px) 100%, 0 100%, 0 18px);
+}
+.spec{margin:26px 0 0; border-top:1px solid var(--edge-soft);}
+.spec div{display:flex; justify-content:space-between; gap:18px; padding:12px 2px; border-bottom:1px solid var(--edge-soft); font-size:15px;}
+.spec dt{color:var(--muted);}
+.spec dd{margin:0; font-weight:600; text-align:right; font-family:"Chakra Petch",sans-serif; color:var(--cyan);}
+.flist{list-style:none; margin:22px 0 0; padding:0; display:grid; gap:14px;}
+.flist li{display:flex; gap:12px; font-size:15.5px; color:#CBD8EB;}
+.flist li svg{flex:none; width:18px; height:18px; margin-top:4px; color:var(--magenta);}
+.dots{display:flex; gap:10px; margin-top:22px; align-items:center; flex-wrap:wrap;}
+.dot{width:24px; height:24px; border:1px solid rgba(255,255,255,.2); border-radius:2px;}
+.dots span.note{font-size:13px; color:var(--muted);}
+
+/* ---------- steps ---------- */
+.steps{display:grid; grid-template-columns:repeat(4,1fr); gap:20px;}
+.step{position:relative; padding:24px 20px; border:1px solid var(--edge-soft); background:rgba(13,19,36,.6);
+  clip-path:polygon(14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%, 0 14px);}
+.step .num{font-family:"Chakra Petch",sans-serif; font-size:13px; letter-spacing:.2em; color:var(--cyan); display:block; margin-bottom:12px;}
+.step h3{font-size:16.5px; font-weight:600;}
+.step p{margin:9px 0 0; font-size:14px; color:var(--muted);}
+
+/* ---------- delivery ---------- */
+.delivery{border-top:1px solid var(--edge); background:rgba(9,13,26,.55);}
+.delivery-inner{display:grid; grid-template-columns:1fr 1fr; gap:52px; align-items:center;}
+.delivery ul{list-style:none; padding:0; margin:22px 0 0; display:grid; gap:11px;}
+.delivery ul li{display:flex; gap:11px; font-size:15px; color:var(--muted);}
+.delivery ul li svg{flex:none; width:18px; height:18px; color:var(--cyan); margin-top:3px;}
+
+/* ---------- cta ---------- */
+.cta-box{
+  border:1px solid var(--magenta); padding:44px 40px; background:linear-gradient(140deg, rgba(255,79,216,.08), rgba(61,225,255,.06));
+  clip-path:polygon(22px 0, 100% 0, 100% calc(100% - 22px), calc(100% - 22px) 100%, 0 100%, 0 22px);
+  display:flex; justify-content:space-between; align-items:center; gap:32px; flex-wrap:wrap;
+  box-shadow:0 0 50px rgba(255,79,216,.10);
+}
+.cta-box h2{font-size:clamp(23px,2.8vw,32px); max-width:22ch;}
+.cta-box p{margin-top:10px; color:var(--muted); max-width:44ch;}
+
+/* ---------- footer ---------- */
+footer{border-top:1px solid var(--edge); padding:40px 0 28px; background:rgba(5,7,15,.9);}
+.footer-inner{display:flex; justify-content:space-between; gap:24px; flex-wrap:wrap; align-items:flex-start;}
+.foot-bottom{margin-top:30px; font-size:12.5px; color:#5E6E8A;}
+
+@media (max-width:900px){
+  nav{display:none;}
+  .hero-inner{grid-template-columns:1fr;}
+  .hero-art{order:-1;}
+  .strip-inner{grid-template-columns:1fr;}
+  .cat-grid{grid-template-columns:1fr 1fr;}
+  .spot-grid{grid-template-columns:1fr;}
+  .steps{grid-template-columns:1fr 1fr;}
+  .delivery-inner{grid-template-columns:1fr;}
+}
+@media (max-width:560px){
+  .wrap{padding:0 20px;}
+  .header-inner{padding:14px 20px;}
+  .cat-grid,.steps{grid-template-columns:1fr;}
+  .cta-box{padding:32px 24px;}
+  section{padding:64px 0;}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a class="brand" href="#top">
+      <svg class="brand-mark" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <circle cx="16" cy="28" r="9"/><circle cx="16" cy="28" r="2.5"/>
+        <path d="M16 19V9h8M22 19h8l-4 9"/>
+      </svg>
+      <span class="brand-text">
+        <span class="brand-name">ТРОН</span>
+        <span class="brand-tag">текстиль для инвалидных колясок</span>
+      </span>
+    </a>
+    <nav>
+      <a href="#catalog">Изделия</a>
+      <a href="#pillow">Подушки</a>
+      <a href="#order">Заказ</a>
+      <a href="#delivery">Доставка</a>
+    </nav>
+    <a class="btn" href="https://vk.ru/club_atelier.inva" target="_blank" rel="noopener">Написать в VK</a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-inner">
+    <div>
+      <h1>Коляска — ваша.<br><span class="glow">Текстиль — по вашим меркам.</span></h1>
+      <p>Противопролежневые подушки, чехлы, сумки и защита рамы. Шьём под конкретную модель коляски: размер, жёсткость, ткань и цвет выбираете вы.</p>
+      <div class="hero-ctas">
+        <a class="btn" href="https://vk.ru/club_atelier.inva" target="_blank" rel="noopener">Написать в VK</a>
+        <a class="btn btn-quiet" href="#catalog">Смотреть изделия</a>
+      </div>
+    </div>
+
+    <div class="hero-art">
+      <svg viewBox="0 0 520 380" fill="none" role="img" aria-label="Схема инвалидной коляски с подсветкой тканевых элементов">
+        <defs>
+          <linearGradient id="gcy" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#3DE1FF"/><stop offset="1" stop-color="#1B8FA8"/>
+          </linearGradient>
+          <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+            <feGaussianBlur stdDeviation="5" result="b"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+
+        <!-- floor reflection line -->
+        <ellipse cx="260" cy="342" rx="190" ry="14" fill="#3DE1FF" opacity="0.07"/>
+        <line x1="70" y1="342" x2="450" y2="342" stroke="#3DE1FF" stroke-opacity="0.3" stroke-dasharray="2 9" stroke-linecap="round"/>
+
+        <g filter="url(#glow)">
+          <!-- big wheel -->
+          <circle class="trace" cx="200" cy="270" r="70" stroke="url(#gcy)" stroke-width="3"/>
+          <circle cx="200" cy="270" r="54" stroke="#3DE1FF" stroke-opacity=".35" stroke-width="1.2"/>
+          <g stroke="#3DE1FF" stroke-opacity=".45" stroke-width="1.2">
+            <path d="M200 200v140M130 270h140M151 221l98 98M249 221l-98 98"/>
+          </g>
+          <circle cx="200" cy="270" r="9" stroke="#3DE1FF" stroke-width="2.4"/>
+          <!-- front castor -->
+          <circle class="trace trace2" cx="378" cy="308" r="30" stroke="url(#gcy)" stroke-width="2.6"/>
+          <circle cx="378" cy="308" r="5" stroke="#3DE1FF" stroke-width="2"/>
+          <path d="M378 278v-26" stroke="#3DE1FF" stroke-width="2.6" stroke-linecap="round"/>
+        </g>
+
+        <!-- frame -->
+        <g stroke="#7FE9FF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity=".9">
+          <path class="trace" d="M150 210h180l-10 46"/>
+          <path d="M150 210V96M330 210l38 46M200 270v0"/>
+          <path d="M150 120h44M330 210l20-58"/>
+        </g>
+
+        <!-- seat cushion (magenta = fabric) -->
+        <g>
+          <rect x="146" y="188" width="190" height="26" rx="8" fill="rgba(255,79,216,.16)" stroke="#FF4FD8" stroke-width="2.4"/>
+          <path d="M156 198q9-7 18 0t18 0 18 0 18 0 18 0 18 0 18 0 18 0 18 0" stroke="#FF4FD8" stroke-opacity=".55" stroke-width="1.4" fill="none"/>
+        </g>
+        <!-- backrest cover -->
+        <g>
+          <rect x="132" y="96" width="24" height="104" rx="8" fill="rgba(255,79,216,.14)" stroke="#FF4FD8" stroke-width="2.4"/>
+          <path d="M138 110h12M138 126h12M138 142h12M138 158h12M138 174h12" stroke="#FF4FD8" stroke-opacity=".5" stroke-width="1.3"/>
+        </g>
+        <!-- bag on back -->
+        <g>
+          <path d="M96 130h30v44a6 6 0 01-6 6h-18a6 6 0 01-6-6z" fill="rgba(255,194,74,.12)" stroke="#FFC24A" stroke-width="2.2"/>
+          <path d="M104 130v-7a7 7 0 0114 0v7" stroke="#FFC24A" stroke-width="2.2" fill="none"/>
+        </g>
+        <!-- frame protection -->
+        <g>
+          <path d="M334 216l32 40" stroke="#FFC24A" stroke-width="7" stroke-linecap="round" opacity=".28"/>
+          <path d="M334 216l32 40" stroke="#FFC24A" stroke-width="2" stroke-linecap="round" stroke-dasharray="4 5"/>
+        </g>
+
+        <!-- annotation nodes -->
+        <g font-family="Chakra Petch" font-size="12.5">
+          <circle class="pulse" cx="240" cy="201" r="4" fill="#FF4FD8"/>
+          <line x1="244" y1="201" x2="404" y2="176" stroke="#FF4FD8" stroke-opacity=".45"/>
+          <text x="410" y="180" fill="#FF4FD8">подушка</text>
+
+          <circle class="pulse" cx="144" cy="130" r="4" fill="#FF4FD8"/>
+          <line x1="144" y1="130" x2="404" y2="112" stroke="#FF4FD8" stroke-opacity=".35"/>
+          <text x="410" y="116" fill="#FF4FD8">чехол спинки</text>
+
+          <circle class="pulse" cx="111" cy="152" r="4" fill="#FFC24A"/>
+          <line x1="111" y1="152" x2="58" y2="96" stroke="#FFC24A" stroke-opacity=".4"/>
+          <text x="10" y="90" fill="#FFC24A">сумка</text>
+
+          <circle class="pulse" cx="350" cy="236" r="4" fill="#FFC24A"/>
+          <line x1="354" y1="236" x2="430" y2="244" stroke="#FFC24A" stroke-opacity=".4"/>
+          <text x="436" y="248" fill="#FFC24A">рама</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- STRIP -->
+<div class="strip">
+  <div class="wrap strip-inner">
+    <div class="strip-item">
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 24h36M6 18v12M42 18v12M14 34l4-4M24 34l4-4M34 34l4-4"/></svg>
+      <div><h3>Точные размеры</h3><p>Снимаем мерки под конкретную модель коляски и посадку</p></div>
+    </div>
+    <div class="strip-item">
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M10 34c8-14 20-14 28-24"/><circle cx="12" cy="35" r="2.6" fill="currentColor" stroke="none"/><path d="M14 30l6 6M20 24l6 6" stroke-dasharray="1 5"/></svg>
+      <div><h3>Пошив на заказ</h3><p>Каждое изделие шьётся под клиента, а не берётся со склада</p></div>
+    </div>
+    <div class="strip-item">
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 30V14h20v16"/><path d="M26 20h9l7 7v3h-4"/><circle cx="16" cy="34" r="3.6"/><circle cx="34" cy="34" r="3.6"/></svg>
+      <div><h3>Россия и СНГ</h3><p>Отправляем в любой регион почтой или транспортной компанией</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- CATALOG -->
+<section id="catalog">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Что мы шьём</h2>
+      <p>Пять направлений — от противопролежневых подушек до защиты рамы. Всё под ваши размеры.</p>
+    </div>
+    <div class="cat-grid">
+      <div class="cat">
+        <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="6" y="18" width="36" height="20" rx="8"/><path d="M11 23q4-4 8 0t8 0 8 0 8 0"/><path d="M6 28h36" stroke-dasharray="2 4" opacity=".5"/>
+        </svg>
+        <h3>Противопролежневые подушки</h3>
+        <p>Распределяют давление на сиденье. Жёсткость, толщина и расцветка — на выбор.</p>
+      </div>
+      <div class="cat">
+        <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 42V18c0-5 5-8 12-8s12 3 12 8v24"/><path d="M24 12v30" stroke-dasharray="2 4"/>
+        </svg>
+        <h3>Чехлы</h3>
+        <p>На сиденье, спинку и подлокотники. Снимаются и стираются, защищают обивку.</p>
+      </div>
+      <div class="cat accent">
+        <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M10 20c0-4 4-6 14-6s14 2 14 6v18a3 3 0 01-3 3H13a3 3 0 01-3-3z"/><path d="M18 20v-4a6 6 0 0112 0v4"/>
+        </svg>
+        <h3>Сумки и карманы</h3>
+        <p>Крепятся на спинку, подлокотник или раму — для телефона, документов, лекарств.</p>
+      </div>
+      <div class="cat accent">
+        <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 39L39 9"/><rect x="16" y="16" width="16" height="16" rx="3" transform="rotate(45 24 24)" stroke-dasharray="2 3.5"/>
+        </svg>
+        <h3>Защита рамы</h3>
+        <p>Тканевые накладки от истирания, грязи и царапин при перевозке.</p>
+      </div>
+      <div class="cat">
+        <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M32 8l8 8-20 20-10 2 2-10z"/><path d="M10 40q5-7 12-3" stroke-dasharray="1 4.5"/>
+        </svg>
+        <h3>Пошив по вашему эскизу</h3>
+        <p>Нестандартная коляска или особое пожелание — обсуждаем и шьём под задачу.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PILLOW -->
+<section class="pillow" id="pillow">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Подушка на инвалидное кресло по индивидуальным размерам</h2>
+      <p>Жёсткость, толщина и расцветка — на выбор. По желанию добавим карман на молнии.</p>
+    </div>
+    <div class="spot-grid">
+      <div>
+        <div class="diagram-frame">
+          <svg viewBox="0 0 440 240" fill="none" role="img" aria-label="Схема подушки в разрезе">
+            <!-- cushion body -->
+            <rect x="30" y="118" width="380" height="66" rx="16" fill="rgba(61,225,255,.06)" stroke="#3DE1FF" stroke-width="2"/>
+            <!-- mesh top -->
+            <path d="M30 134c0-10 7-16 16-16h348c9 0 16 6 16 16" fill="rgba(255,79,216,.10)" stroke="#FF4FD8" stroke-width="2"/>
+            <g stroke="#FF4FD8" stroke-opacity=".5" stroke-width="1">
+              <path d="M40 126h360M60 118v14M90 118v14M120 118v14M150 118v14M180 118v14M210 118v14M240 118v14M270 118v14M300 118v14M330 118v14M360 118v14"/>
+            </g>
+            <!-- foam cells -->
+            <g stroke="#3DE1FF" stroke-opacity=".38" stroke-width="1.1" fill="none">
+              <circle cx="70" cy="150" r="7"/><circle cx="100" cy="158" r="7"/><circle cx="130" cy="148" r="7"/>
+              <circle cx="160" cy="160" r="7"/><circle cx="190" cy="150" r="7"/><circle cx="220" cy="158" r="7"/>
+              <circle cx="250" cy="148" r="7"/><circle cx="280" cy="160" r="7"/><circle cx="310" cy="150" r="7"/>
+              <circle cx="340" cy="158" r="7"/><circle cx="85" cy="172" r="7"/><circle cx="115" cy="174" r="7"/>
+              <circle cx="145" cy="171" r="7"/><circle cx="175" cy="175" r="7"/><circle cx="205" cy="171" r="7"/>
+              <circle cx="235" cy="175" r="7"/><circle cx="265" cy="171" r="7"/><circle cx="295" cy="175" r="7"/>
+              <circle cx="325" cy="171" r="7"/>
+            </g>
+            <!-- zip pocket -->
+            <rect x="366" y="128" width="30" height="48" rx="6" fill="none" stroke="#FFC24A" stroke-width="1.8" stroke-dasharray="4 4"/>
+            <circle cx="381" cy="136" r="2.6" fill="#FFC24A"/>
+            <text x="381" y="196" fill="#FFC24A" font-size="10.5" font-family="Chakra Petch" text-anchor="middle">карман</text>
+            <!-- labels -->
+            <text x="34" y="112" fill="#FF4FD8" font-size="11.5" font-family="Chakra Petch">дышащая многослойная сетка</text>
+            <text x="34" y="205" fill="#3DE1FF" font-size="11.5" font-family="Chakra Petch">пенополиуретан подобранной плотности</text>
+            <!-- dimension -->
+            <g stroke="#7A8CA8" stroke-width="1.2">
+              <line x1="30" y1="222" x2="410" y2="222"/><line x1="30" y1="216" x2="30" y2="228"/><line x1="410" y1="216" x2="410" y2="228"/>
+            </g>
+            <text x="220" y="238" fill="#8FA2BF" font-size="11" font-family="Inter" text-anchor="middle">ширина и глубина — по вашим меркам</text>
+          </svg>
+        </div>
+
+        <dl class="spec">
+          <div><dt>Жёсткость</dt><dd>на выбор</dd></div>
+          <div><dt>Толщина</dt><dd>на выбор</dd></div>
+          <div><dt>Вес</dt><dd>500–700 г</dd></div>
+          <div><dt>Верхняя вставка чехла</dt><dd>дышащая сетка</dd></div>
+          <div><dt>Наполнитель</dt><dd>пенополиуретан</dd></div>
+          <div><dt>Стирка</dt><dd>машинная, до 40°</dd></div>
+          <div><dt>Карман на молнии</dt><dd>по желанию</dd></div>
+        </dl>
+
+        <div class="dots" aria-label="Примеры расцветок">
+          <span class="dot" style="background:#123A55"></span>
+          <span class="dot" style="background:#1B6E63"></span>
+          <span class="dot" style="background:#5A2B6B"></span>
+          <span class="dot" style="background:#7A1F2B"></span>
+          <span class="dot" style="background:#2C3140"></span>
+          <span class="dot" style="background:#5E6230"></span>
+          <span class="dot" style="background:#8C8478"></span>
+          <span class="note">и другие ткани по запросу</span>
+        </div>
+      </div>
+
+      <div>
+        <h3 style="font-size:21px; font-weight:600;">Из чего сделана</h3>
+        <ul class="flist">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg>Ткань чехла устойчива к истиранию, разрывам и сгибам. При своей плотности она лёгкая и хорошо отталкивает воду.</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg>Верхняя вставка чехла — дышащая многослойная сетка.</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg>Наполнитель — специально подобранные виды высокоэластичного пенополиуретана разной плотности.</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg>Не вызывает аллергию: без неприятных запахов и вредных примесей.</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg>Чехол легко чистится и стирается в машинке при температуре до 40°.</li>
+        </ul>
+        <div style="margin-top:30px;">
+          <a class="btn btn-magenta" href="https://vk.ru/club_atelier.inva" target="_blank" rel="noopener">Обсудить размеры подушки</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ORDER -->
+<section id="order">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Как оформить заказ</h2>
+      <p>От первого сообщения до готового изделия — четыре шага.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><span class="num">ШАГ 01</span><h3>Опишите задачу</h3><p>Пишете в VK: модель коляски и что нужно сшить.</p></div>
+      <div class="step"><span class="num">ШАГ 02</span><h3>Снимаем размеры</h3><p>Подскажем, как измерить самостоятельно, и проверим мерки.</p></div>
+      <div class="step"><span class="num">ШАГ 03</span><h3>Выбираете параметры</h3><p>Ткань, цвет, жёсткость, толщина, дополнительные карманы.</p></div>
+      <div class="step"><span class="num">ШАГ 04</span><h3>Шьём и отправляем</h3><p>Согласуем сроки, упакуем и отправим в ваш город.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- DELIVERY -->
+<section class="delivery" id="delivery">
+  <div class="wrap delivery-inner">
+    <div>
+      <h2 style="font-size:clamp(24px,3vw,34px); font-weight:700;">Доставка по России и СНГ</h2>
+      <p style="margin-top:16px; color:var(--muted); max-width:52ch;">Отправляем готовые изделия Почтой России и транспортными компаниями в любой регион, а также в страны СНГ. Сроки и стоимость зависят от города — уточняем при оформлении.</p>
+      <ul>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg>Почта России — в отделение или до двери</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg>Транспортные компании — для крупных и срочных заказов</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg>Способ и сроки согласуем перед отправкой</li>
+      </ul>
+    </div>
+    <svg viewBox="0 0 440 280" fill="none" role="img" aria-label="Схема маршрутов доставки">
+      <path d="M20 200c40-46 80-72 130-88 56-18 104 4 150 10 40 5 80-6 122-42" stroke="#3DE1FF" stroke-opacity=".35" stroke-width="1.6" stroke-dasharray="2 8" stroke-linecap="round"/>
+      <path d="M40 232c60-8 120 12 180 4 56-8 112-34 180-60" stroke="#FF4FD8" stroke-opacity=".3" stroke-width="1.6" stroke-dasharray="2 8" stroke-linecap="round"/>
+      <g fill="#3DE1FF">
+        <circle cx="60" cy="182" r="4.5"/><circle cx="150" cy="140" r="4.5"/><circle cx="240" cy="118" r="4.5"/>
+        <circle cx="320" cy="108" r="4.5"/><circle cx="400" cy="78" r="4.5"/>
+      </g>
+      <g fill="#FF4FD8">
+        <circle cx="120" cy="236" r="4.5"/><circle cx="260" cy="212" r="4.5"/><circle cx="370" cy="186" r="4.5"/>
+      </g>
+      <text x="30" y="170" fill="#3DE1FF" font-size="12" font-family="Chakra Petch">Россия</text>
+      <text x="96" y="262" fill="#FF4FD8" font-size="12" font-family="Chakra Petch">страны СНГ</text>
+    </svg>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="padding-top:0;">
+  <div class="wrap">
+    <div class="cta-box">
+      <div>
+        <h2>Расскажите про вашу коляску</h2>
+        <p>Модель, нужные размеры и пожелания по ткани — предложим варианты и посчитаем стоимость.</p>
+      </div>
+      <a class="btn btn-magenta" href="https://vk.ru/club_atelier.inva" target="_blank" rel="noopener">Написать в VK</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <a class="brand" href="#top">
+      <svg class="brand-mark" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <circle cx="16" cy="28" r="9"/><circle cx="16" cy="28" r="2.5"/>
+        <path d="M16 19V9h8M22 19h8l-4 9"/>
+      </svg>
+      <span class="brand-text">
+        <span class="brand-name">ТРОН</span>
+        <span class="brand-tag">пошив по индивидуальным размерам · Россия и СНГ</span>
+      </span>
+    </a>
+    <a class="btn btn-quiet" href="https://vk.ru/club_atelier.inva" target="_blank" rel="noopener">Группа в VK</a>
+  </div>
+  <div class="wrap foot-bottom">© 2026 ТРОН. Все изделия шьются на заказ.</div>
+</footer>
+
+</body>
+</html>
